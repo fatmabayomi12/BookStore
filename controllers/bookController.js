@@ -60,8 +60,7 @@ const createBook = asyncHandler(async (req, res) => {
     title: req.body.title,
     author: req.body.author,
     description: req.body.description,
-    price: req.body.price,
-    cover: req.body.cover,
+    price: req.body.price
   });
 
   const result = await book.save();
@@ -88,8 +87,7 @@ const updateBook = asyncHandler(async (req, res) => {
         title: req.body.title,
         author: req.body.author,
         description: req.body.description,
-        price: req.body.price,
-        cover: req.body.cover,
+        price: req.body.price
       },
     },
     { new: true }

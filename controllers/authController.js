@@ -13,10 +13,10 @@ const {
  *  @access  public
  */
 module.exports.register = asyncHandler(async (req, res) => {
-  const { error } = validateRegisterUser(req.body);
+  /*const { error } = validateRegisterUser(req.body);
   if (error) {
     return res.status(400).json({ message: error.details[0].message });
-  }
+  }*/
 
   let user = await User.findOne({ email: req.body.email });
   if (user) {
@@ -30,6 +30,7 @@ module.exports.register = asyncHandler(async (req, res) => {
     email: req.body.email,
     username: req.body.username,
     password: req.body.password,
+    isAdmin: req.body.isAdmin || false
   });
 
   const result = await user.save();

@@ -12,12 +12,12 @@ const {
  *  @access  public
  */
 module.exports.getAllAuthors = asyncHandler(async (req, res) => {
-  const { pageNumber } = req.query;
-  const authorsPerPage = 2;
+ // const { pageNumber } = req.query;
+ //const authorsPerPage = 2;
 
   const authorList = await Author.find()
-    .skip((pageNumber - 1) * authorsPerPage)
-    .limit(authorsPerPage);
+   // .skip((pageNumber - 1) * authorsPerPage)
+   // .limit(authorsPerPage);
 
   res.status(200).json(authorList);
 });
